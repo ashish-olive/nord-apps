@@ -86,7 +86,7 @@ pip install -r requirements.txt
 
 **Usage Analytics Frontend:**
 ```bash
-cd surfshark-vpn-analytics/cost-app/frontend
+cd surfshark-vpn-analytics/usage-app/frontend
 npm install
 cd ../../..
 ```
@@ -204,7 +204,7 @@ You can run **both apps simultaneously** or just one at a time. They share the s
 ```bash
 cd surfshark-vpn-analytics
 source venv/bin/activate
-python cost-app/backend/app.py
+python usage-app/backend/app.py
 ```
 Backend available at: **http://localhost:5002**
 
@@ -218,7 +218,7 @@ Backend available at: **http://localhost:5003**
 
 **Terminal 3 - Usage Analytics Frontend:**
 ```bash
-cd surfshark-vpn-analytics/cost-app/frontend
+cd surfshark-vpn-analytics/usage-app/frontend
 npm start
 ```
 Frontend available at: **http://localhost:3000**
@@ -236,12 +236,12 @@ Frontend available at: **http://localhost:3001**
 ```bash
 cd surfshark-vpn-analytics
 source venv/bin/activate
-python cost-app/backend/app.py
+python usage-app/backend/app.py
 ```
 
 **Terminal 2:**
 ```bash
-cd surfshark-vpn-analytics/cost-app/frontend
+cd surfshark-vpn-analytics/usage-app/frontend
 npm start
 ```
 
@@ -280,7 +280,7 @@ Access at: **http://localhost:3001**
 
 ```
 surfshark-vpn-analytics/
-├── cost-app/                    # Usage Analytics Application
+├── usage-app/                   # Usage Analytics Application
 │   ├── backend/
 │   │   └── app.py              # Flask API (Port 5002)
 │   └── frontend/               # React App (Port 3000)
@@ -410,7 +410,7 @@ Create a `.env` file in the `surfshark-vpn-analytics` directory (or copy from `.
 
 ```bash
 # Flask Configuration
-FLASK_APP=cost-app/backend/app.py
+FLASK_APP=usage-app/backend/app.py
 FLASK_ENV=development
 FLASK_DEBUG=1
 
