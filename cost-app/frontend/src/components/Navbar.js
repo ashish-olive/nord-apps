@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const navItems = [
     { path: '/executive', label: 'Executive', icon: <DashboardIcon /> },
-    { path: '/cost-analysis', label: 'Usage Analysis', icon: <AnalyticsIcon /> },
+    { path: '/usage-analysis', label: 'Usage Analysis', icon: <AnalyticsIcon /> },
     { path: '/scenarios', label: 'Scenarios', icon: <ScienceIcon /> },
   ];
 

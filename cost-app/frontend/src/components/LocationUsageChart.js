@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { formatCurrency } from '../utils/formatters';
 
-const LocationCostChart = ({ data, title = 'Usage by Location' }) => {
+const LocationUsageChart = ({ data, title = 'Usage by Location' }) => {
   const chartData = data.slice(0, 10).map(item => ({
     location: item.location,
     cost: item.total_cost,
@@ -31,4 +31,4 @@ const LocationCostChart = ({ data, title = 'Usage by Location' }) => {
   );
 };
 
-export default LocationCostChart;
+export default LocationUsageChart;

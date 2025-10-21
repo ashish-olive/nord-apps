@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Container, Grid, Typography, Tabs, Tab, Box, Alert, CircularProgress } from '@mui/material';
 import ScenarioForm from '../components/ScenarioForm';
 import ScenarioResult from '../components/ScenarioResult';
-import { costApi } from '../api/costApi';
+import { usageApi } from '../api/usageApi';
 
 const ScenarioStudio = () => {
   const [activeTab, setActiveTab] = useState(0);
@@ -20,8 +20,8 @@ const ScenarioStudio = () => {
     try {
       setLoading(true);
       const [providersRes, summaryRes] = await Promise.all([
-        costApi.getProviders(),
-        costApi.getExecutiveSummary(30),
+        usageApi.getProviders(),
+        usageApi.getExecutiveSummary(30),
       ]);
       const providerList = providersRes.data.providers;
       setProviders(providerList.map(p => p.name));

@@ -9,7 +9,7 @@ const api = axios.create({
   },
 });
 
-export const costApi = {
+export const usageApi = {
   // Executive Dashboard
   getExecutiveSummary: (days = 30) => 
     api.get(`/api/cost/executive/summary?days=${days}`),
@@ -39,4 +39,4 @@ export const costApi = {
     api.get('/api/health'),
 };
 
-export default costApi;
+export default usageApi;

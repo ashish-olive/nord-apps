@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Box } from '@mui/material';
 import Navbar from './components/Navbar';
 import ExecutiveDashboard from './pages/ExecutiveDashboard';
-import CostAnalysisDashboard from './pages/CostAnalysisDashboard';
+import UsageAnalysisDashboard from './pages/UsageAnalysisDashboard';
 import ScenarioStudio from './pages/ScenarioStudio';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Navigate to="/executive" replace />} />
           <Route path="/executive" element={<ExecutiveDashboard />} />
-          <Route path="/cost-analysis" element={<CostAnalysisDashboard />} />
+          <Route path="/usage-analysis" element={<UsageAnalysisDashboard />} />
           <Route path="/scenarios" element={<ScenarioStudio />} />
         </Routes>
       </Box>

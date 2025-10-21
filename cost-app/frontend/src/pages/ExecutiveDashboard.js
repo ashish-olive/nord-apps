@@ -5,10 +5,10 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 import PeopleIcon from '@mui/icons-material/People';
 import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import KPICard from '../components/KPICard';
-import CostTrendChart from '../components/CostTrendChart';
+import UsageTrendChart from '../components/UsageTrendChart';
 import ProviderBreakdownChart from '../components/ProviderBreakdownChart';
 import ServerTable from '../components/ServerTable';
-import { costApi } from '../api/costApi';
+import { usageApi } from '../api/usageApi';
 
 const ExecutiveDashboard = () => {
   const [loading, setLoading] = useState(true);
@@ -26,10 +26,10 @@ const ExecutiveDashboard = () => {
     try {
       setLoading(true);
       const [summaryRes, trendsRes, providersRes, serversRes] = await Promise.all([
-        costApi.getExecutiveSummary(days),
-        costApi.getCostTrends(days),
-        costApi.getCostByProvider(days),
-        costApi.getCostByServer(days, 10),
+        usageApi.getExecutiveSummary(days),
+        usageApi.getCostTrends(days),
+        usageApi.getCostByProvider(days),
+        usageApi.getCostByServer(days, 10),
       ]);
 
       setSummary(summaryRes.data.metrics);
@@ -100,7 +100,7 @@ const ExecutiveDashboard = () => {
 
         {/* Usage Trend Chart */}
         <Grid item xs={12} md={8}>
-          <CostTrendChart data={trends} title="Daily Usage Trends" />
+          <UsageTrendChart data={trends} title="Daily Usage Trends" />
         </Grid>
 
         {/* Provider Breakdown */}

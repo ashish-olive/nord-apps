@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { formatCurrency } from '../utils/formatters';
 
-const CostTrendChart = ({ data, title = 'Usage Trends' }) => {
+const UsageTrendChart = ({ data, title = 'Usage Trends' }) => {
   return (
     <Card>
       <CardContent>
@@ -31,4 +31,4 @@ const CostTrendChart = ({ data, title = 'Usage Trends' }) => {
   );
 };
 
-export default CostTrendChart;
+export default UsageTrendChart;

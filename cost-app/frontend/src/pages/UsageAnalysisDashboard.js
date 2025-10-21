@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Grid, Typography, CircularProgress, Box } from '@mui/material';
-import LocationCostChart from '../components/LocationCostChart';
+import LocationUsageChart from '../components/LocationUsageChart';
 import ProviderBreakdownChart from '../components/ProviderBreakdownChart';
 import ServerTable from '../components/ServerTable';
-import { costApi } from '../api/costApi';
+import { usageApi } from '../api/usageApi';
 
-const CostAnalysisDashboard = () => {
+const UsageAnalysisDashboard = () => {
   const [loading, setLoading] = useState(true);
   const [providers, setProviders] = useState([]);
   const [locations, setLocations] = useState([]);
@@ -20,9 +20,9 @@ const CostAnalysisDashboard = () => {
     try {
       setLoading(true);
       const [providersRes, locationsRes, serversRes] = await Promise.all([
-        costApi.getCostByProvider(days),
-        costApi.getCostByLocation(days),
-        costApi.getCostByServer(days, 20),
+        usageApi.getCostByProvider(days),
+        usageApi.getCostByLocation(days),
+        usageApi.getCostByServer(days, 20),
       ]);
 
       setProviders(providersRes.data.providers);
@@ -60,7 +60,7 @@ const CostAnalysisDashboard = () => {
 
         {/* Location Breakdown */}
         <Grid item xs={12} md={6}>
-          <LocationCostChart data={locations} />
+          <LocationUsageChart data={locations} />
         </Grid>
 
         {/* Top Usage Servers */}
@@ -72,4 +72,4 @@ const CostAnalysisDashboard = () => {
   );
 };
 
-export default CostAnalysisDashboard;
+export default UsageAnalysisDashboard;
