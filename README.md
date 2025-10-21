@@ -1,27 +1,27 @@
 # Surfshark VPN Analytics Platform
 
-A comprehensive analytics platform for VPN infrastructure with **two integrated applications**: Cost Analytics and Performance Analytics, sharing a unified database.
+A comprehensive analytics platform for VPN infrastructure with **two integrated applications**: Usage Analytics and Performance Analytics, sharing a unified database.
 
 ## 🚀 Features
 
-### 💰 Cost Analytics App (Port 3000)
+### 💰 Usage Analytics App (Port 3000)
 **Executive Dashboard**
-- Real-time cost KPIs with period-over-period comparisons
-- Daily cost trend visualization
-- Provider cost breakdown
-- Top cost servers analysis
+- Real-time usage KPIs with period-over-period comparisons
+- Daily usage trend visualization
+- Provider usage breakdown
+- Top usage servers analysis
 
-**Cost Analysis Dashboard**
-- Cost breakdown by cloud provider (AWS, GCP, Azure, DigitalOcean, Vultr)
-- Geographic cost distribution
-- Detailed server-level cost analysis
+**Usage Analysis Dashboard**
+- Usage breakdown by cloud provider (AWS, GCP, Azure, DigitalOcean, Vultr)
+- Geographic usage distribution
+- Detailed server-level usage analysis
 - Session and utilization metrics
 
 **Scenario Studio**
-- **Server Scaling**: Model cost impact of adding/removing servers
+- **Server Scaling**: Model usage impact of adding/removing servers
 - **Provider Migration**: Calculate savings from provider changes
-- **Traffic Growth**: Forecast costs with traffic increases
-- **Cost Optimization**: Estimate savings from optimization initiatives
+- **Traffic Growth**: Forecast usage with traffic increases
+- **Usage Optimization**: Estimate savings from optimization initiatives
 
 ### 📊 Performance Analytics App (Port 3001)
 **Performance Dashboard**
@@ -84,7 +84,7 @@ pip install -r requirements.txt
 
 ### 4. Install Frontend Dependencies (Both Apps)
 
-**Cost Analytics Frontend:**
+**Usage Analytics Frontend:**
 ```bash
 cd surfshark-vpn-analytics/cost-app/frontend
 npm install
@@ -200,7 +200,7 @@ You can run **both apps simultaneously** or just one at a time. They share the s
 
 ### Option 1: Run Both Apps (Recommended)
 
-**Terminal 1 - Cost Analytics Backend:**
+**Terminal 1 - Usage Analytics Backend:**
 ```bash
 cd surfshark-vpn-analytics
 source venv/bin/activate
@@ -216,7 +216,7 @@ python performance-app/backend/app.py
 ```
 Backend available at: **http://localhost:5003**
 
-**Terminal 3 - Cost Analytics Frontend:**
+**Terminal 3 - Usage Analytics Frontend:**
 ```bash
 cd surfshark-vpn-analytics/cost-app/frontend
 npm start
@@ -230,7 +230,7 @@ npm start
 ```
 Frontend available at: **http://localhost:3001**
 
-### Option 2: Run Only Cost Analytics
+### Option 2: Run Only Usage Analytics
 
 **Terminal 1:**
 ```bash
@@ -266,7 +266,7 @@ Access at: **http://localhost:3001**
 
 ### Access URLs
 
-**Cost Analytics:**
+**Usage Analytics:**
 - Frontend: http://localhost:3000
 - Backend API: http://localhost:5002
 - Health Check: http://localhost:5002/api/health
@@ -280,7 +280,7 @@ Access at: **http://localhost:3001**
 
 ```
 surfshark-vpn-analytics/
-├── cost-app/                    # Cost Analytics Application
+├── cost-app/                    # Usage Analytics Application
 │   ├── backend/
 │   │   └── app.py              # Flask API (Port 5002)
 │   └── frontend/               # React App (Port 3000)
@@ -319,7 +319,7 @@ surfshark-vpn-analytics/
 
 ## 🔌 API Endpoints
 
-### Cost Analytics API (Port 5002)
+### Usage Analytics API (Port 5002)
 - `GET /api/cost/executive/summary?days=30` - Executive KPIs
 - `GET /api/cost/trends?days=30` - Daily cost trends
 - `GET /api/cost/by-provider?days=30` - Cost by provider

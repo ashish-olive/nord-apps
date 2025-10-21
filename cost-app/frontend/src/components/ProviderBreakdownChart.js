@@ -5,7 +5,7 @@ import { formatCurrency } from '../utils/formatters';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#8884D8'];
 
-const ProviderBreakdownChart = ({ data, title = 'Cost by Provider' }) => {
+const ProviderBreakdownChart = ({ data, title = 'Usage by Provider' }) => {
   const chartData = data.map(item => ({
     name: item.provider,
     value: item.total_cost,

@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const navItems = [
     { path: '/executive', label: 'Executive', icon: <DashboardIcon /> },
-    { path: '/cost-analysis', label: 'Cost Analysis', icon: <AnalyticsIcon /> },
+    { path: '/cost-analysis', label: 'Usage Analysis', icon: <AnalyticsIcon /> },
     { path: '/scenarios', label: 'Scenarios', icon: <ScienceIcon /> },
   ];
 
@@ -19,7 +19,7 @@ const Navbar = () => {
     <AppBar position="fixed">
       <Toolbar>
         <Typography variant="h6" component="div" sx={{ flexGrow: 0, mr: 4 }}>
-          Cost Analytics
+          Usage Analytics
         </Typography>
         <Box sx={{ flexGrow: 1, display: 'flex', gap: 1 }}>
           {navItems.map((item) => (

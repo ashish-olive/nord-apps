@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import { formatCurrency, formatNumber } from '../utils/formatters';
 
-const ServerTable = ({ data, title = 'Top Cost Servers' }) => {
+const ServerTable = ({ data, title = 'Top Usage Servers' }) => {
   return (
     <Card>
       <CardContent>
@@ -26,9 +26,9 @@ const ServerTable = ({ data, title = 'Top Cost Servers' }) => {
                 <TableCell>Hostname</TableCell>
                 <TableCell>Location</TableCell>
                 <TableCell>Provider</TableCell>
-                <TableCell align="right">Total Cost</TableCell>
+                <TableCell align="right">Total Usage</TableCell>
                 <TableCell align="right">Sessions</TableCell>
-                <TableCell align="right">Cost/Session</TableCell>
+                <TableCell align="right">Usage/Session</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>

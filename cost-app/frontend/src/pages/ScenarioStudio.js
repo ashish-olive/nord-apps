@@ -47,7 +47,7 @@ const ScenarioStudio = () => {
     {
       type: 'server_scaling',
       title: 'Server Scaling',
-      description: 'Model the cost impact of adding or removing servers from a specific cloud provider.',
+      description: 'Model the usage impact of adding or removing servers from a specific cloud provider.',
       helpText: 'Enter a positive number to add servers or a negative number to remove servers. Select the provider where you want to scale.',
       fields: [
         { name: 'server_change', label: 'Number of Servers to Add/Remove', type: 'number', helperText: 'Use negative numbers to remove servers' },
@@ -68,8 +68,8 @@ const ScenarioStudio = () => {
     {
       type: 'traffic_growth',
       title: 'Traffic Growth',
-      description: 'Forecast infrastructure costs based on expected traffic growth.',
-      helpText: 'Enter the expected percentage increase in traffic. The model will calculate additional infrastructure costs needed.',
+      description: 'Forecast infrastructure usage based on expected traffic growth.',
+      helpText: 'Enter the expected percentage increase in traffic. The model will calculate additional infrastructure usage needed.',
       baseline: baseline ? {
         current_sessions: baseline.total_sessions,
         current_cost: baseline.total_cost?.value,
@@ -80,9 +80,9 @@ const ScenarioStudio = () => {
     },
     {
       type: 'cost_optimization',
-      title: 'Cost Optimization',
+      title: 'Usage Optimization',
       description: 'Estimate savings from specific infrastructure optimization initiatives.',
-      helpText: 'Select optimization strategies to model their combined impact on infrastructure costs.',
+      helpText: 'Select optimization strategies to model their combined impact on infrastructure usage.',
       baseline: baseline ? {
         current_cost: baseline.total_cost?.value,
         base_cost: baseline.base_cost?.value,
@@ -350,7 +350,7 @@ const ScenarioStudio = () => {
         Scenario Studio
       </Typography>
       <Typography variant="body2" color="text.secondary" gutterBottom sx={{ mb: 3 }}>
-        Model what-if scenarios to optimize costs
+        Model what-if scenarios to optimize usage
       </Typography>
 
       <Box sx={{ borderBottom: 1, borderColor: 'divider', mb: 3 }}>

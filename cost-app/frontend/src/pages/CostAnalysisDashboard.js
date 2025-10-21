@@ -29,7 +29,7 @@ const CostAnalysisDashboard = () => {
       setLocations(locationsRes.data.locations);
       setTopServers(serversRes.data.servers);
     } catch (error) {
-      console.error('Error loading cost analysis data:', error);
+      console.error('Error loading usage analysis data:', error);
     } finally {
       setLoading(false);
     }
@@ -46,10 +46,10 @@ const CostAnalysisDashboard = () => {
   return (
     <Container maxWidth="xl">
       <Typography variant="h4" gutterBottom>
-        Cost Analysis Dashboard
+        Usage Analysis Dashboard
       </Typography>
       <Typography variant="body2" color="text.secondary" gutterBottom sx={{ mb: 3 }}>
-        Detailed cost breakdown and analysis
+        Detailed usage breakdown and analysis
       </Typography>
 
       <Grid container spacing={3}>
@@ -63,9 +63,9 @@ const CostAnalysisDashboard = () => {
           <LocationCostChart data={locations} />
         </Grid>
 
-        {/* Top Cost Servers */}
+        {/* Top Usage Servers */}
         <Grid item xs={12}>
-          <ServerTable data={topServers} title="Top 20 Cost Servers" />
+          <ServerTable data={topServers} title="Top 20 Usage Servers" />
         </Grid>
       </Grid>
     </Container>

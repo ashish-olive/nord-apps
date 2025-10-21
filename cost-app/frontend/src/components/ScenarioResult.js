@@ -36,7 +36,7 @@ const ScenarioResult = ({ result }) => {
         <Grid container spacing={2}>
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle2" color="text.secondary">
-              Baseline Cost
+              Baseline Usage
             </Typography>
             <Typography variant="h5">
               {formatCurrency(result.baseline?.total_cost)}
@@ -44,7 +44,7 @@ const ScenarioResult = ({ result }) => {
           </Grid>
           <Grid item xs={12} md={6}>
             <Typography variant="subtitle2" color="text.secondary">
-              Projected Cost
+              Projected Usage
             </Typography>
             <Typography variant="h5">
               {formatCurrency(result.projected?.total_cost)}
@@ -53,7 +53,7 @@ const ScenarioResult = ({ result }) => {
           {result.projected?.cost_change_percent !== undefined && (
             <Grid item xs={12}>
               <Typography variant="subtitle2" color="text.secondary">
-                Cost Change
+                Usage Change
               </Typography>
               <Typography variant="h6" color={result.projected.cost_change_percent > 0 ? 'error' : 'success'}>
                 {formatPercent(result.projected.cost_change_percent)}
@@ -63,7 +63,7 @@ const ScenarioResult = ({ result }) => {
           {result.projected?.savings !== undefined && (
             <Grid item xs={12}>
               <Typography variant="subtitle2" color="text.secondary">
-                {result.projected.savings >= 0 ? 'Total Savings' : 'Additional Cost'}
+                {result.projected.savings >= 0 ? 'Total Savings' : 'Additional Usage'}
               </Typography>
               <Typography variant="h6" color={result.projected.savings >= 0 ? 'success.main' : 'error.main'}>
                 {formatCurrency(Math.abs(result.projected.savings))}

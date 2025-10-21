@@ -64,7 +64,7 @@ const ExecutiveDashboard = () => {
         {/* KPI Cards */}
         <Grid item xs={12} sm={6} md={3}>
           <KPICard
-            title="Total Cost"
+            title="Total Usage"
             value={summary?.total_cost?.value}
             change={summary?.total_cost?.change_percent}
             format="currency"
@@ -73,12 +73,12 @@ const ExecutiveDashboard = () => {
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
           <KPICard
-            title="Cost per Session"
+            title="Usage per Session"
             value={summary?.cost_per_session?.value}
             change={summary?.cost_per_session?.change_percent}
             format="currency"
             icon={<TrendingUpIcon />}
-            infoText="Total infrastructure cost divided by number of VPN sessions. Includes both base server costs and data transfer costs."
+            infoText="Total infrastructure usage divided by number of VPN sessions. Includes both base server usage and data transfer usage."
           />
         </Grid>
         <Grid item xs={12} sm={6} md={3}>
@@ -98,9 +98,9 @@ const ExecutiveDashboard = () => {
           />
         </Grid>
 
-        {/* Cost Trend Chart */}
+        {/* Usage Trend Chart */}
         <Grid item xs={12} md={8}>
-          <CostTrendChart data={trends} title="Daily Cost Trends" />
+          <CostTrendChart data={trends} title="Daily Usage Trends" />
         </Grid>
 
         {/* Provider Breakdown */}
@@ -108,7 +108,7 @@ const ExecutiveDashboard = () => {
           <ProviderBreakdownChart data={providers} />
         </Grid>
 
-        {/* Top Cost Servers */}
+        {/* Top Usage Servers */}
         <Grid item xs={12}>
           <ServerTable data={topServers} />
         </Grid>

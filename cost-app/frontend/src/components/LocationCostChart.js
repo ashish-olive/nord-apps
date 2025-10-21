@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { formatCurrency } from '../utils/formatters';
 
-const LocationCostChart = ({ data, title = 'Cost by Location' }) => {
+const LocationCostChart = ({ data, title = 'Usage by Location' }) => {
   const chartData = data.slice(0, 10).map(item => ({
     location: item.location,
     cost: item.total_cost,
@@ -23,7 +23,7 @@ const LocationCostChart = ({ data, title = 'Cost by Location' }) => {
             <YAxis dataKey="location" type="category" width={150} />
             <Tooltip formatter={(value) => formatCurrency(value)} />
             <Legend />
-            <Bar dataKey="cost" fill="#1976d2" name="Total Cost" />
+            <Bar dataKey="cost" fill="#1976d2" name="Total Usage" />
           </BarChart>
         </ResponsiveContainer>
       </CardContent>

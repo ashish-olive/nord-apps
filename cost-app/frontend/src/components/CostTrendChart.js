@@ -3,7 +3,7 @@ import { Card, CardContent, Typography } from '@mui/material';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { formatCurrency } from '../utils/formatters';
 
-const CostTrendChart = ({ data, title = 'Cost Trends' }) => {
+const CostTrendChart = ({ data, title = 'Usage Trends' }) => {
   return (
     <Card>
       <CardContent>
@@ -22,7 +22,7 @@ const CostTrendChart = ({ data, title = 'Cost Trends' }) => {
               dataKey="cost" 
               stroke="#1976d2" 
               strokeWidth={2}
-              name="Total Cost"
+              name="Total Usage"
             />
           </LineChart>
         </ResponsiveContainer>
